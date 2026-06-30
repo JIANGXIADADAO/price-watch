@@ -1,0 +1,4 @@
+.pw-overlay { position:fixed; top:0; left:0; width:100%; height:100%; z-index:2147483646; cursor:crosshair; background:rgba(0,0,0,0.05); }
+.pw-hover { outline:2px solid #d97757 !important; outline-offset:-1px; background:rgba(217,119,87,0.1) !important; }
+.pw-selected { outline:3px solid #22c55e !important; outline-offset:-2px; background:rgba(34,197,94,0.08) !important; }
+.pw-tooltip { position:fixed; z-index:2147483647; background:#141413; color:#fff; padding:8px 14px; border-radius:8px; font:13px -apple-system,sans-serif; pointer-events:none; box-shadow:0 4px 16px rgba(0,0,0,0.2); }

@@ -1,0 +1,6 @@
+node_modules/
+.playwright-cli/
+*.yml
+*.png
+*.log
+pw-ext-profile/

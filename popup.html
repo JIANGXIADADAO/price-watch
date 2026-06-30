@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { width:360px; font:14px -apple-system,BlinkMacSystemFont,sans-serif; background:#FAF9F5; color:#141413; }
+  .header { padding:16px; border-bottom:1px solid #e5e3dc; display:flex; justify-content:space-between; align-items:center; }
+  .header h1 { font-size:16px; font-weight:700; }
+  .header .count { font-size:12px; color:#87867F; }
+  .section { padding:12px 16px; }
+  .section-title { font-size:11px; text-transform:uppercase; color:#87867F; margin-bottom:8px; letter-spacing:.5px; }
+  .btn { padding:8px 16px; border:none; border-radius:8px; cursor:pointer; font-size:13px; font-weight:600; transition:all .2s; }
+  .btn-primary { background:#d97757; color:#fff; width:100%; }
+  .btn-primary:hover { background:#c6613f; }
+  .btn-ghost { background:transparent; color:#d97757; border:1px solid #d97757; }
+  .btn-danger { background:transparent; color:#ef4444; border:1px solid #ef4444; font-size:11px; padding:4px 8px; }
+  .target-card { background:#fff; border:1px solid #e5e3dc; border-radius:8px; padding:12px; margin-bottom:8px; }
+  .target-card .title { font-weight:600; font-size:13px; margin-bottom:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .target-card .meta { font-size:11px; color:#87867F; }
+  .target-card .price { font-size:18px; font-weight:700; color:#d97757; margin-top:4px; }
+  .target-card .change { font-size:12px; margin-top:2px; }
+  .change-up { color:#22c55e; }
+  .change-down { color:#ef4444; }
+  .webhook-row { display:flex; gap:8px; align-items:center; }
+  .webhook-row input { flex:1; padding:8px 10px; border:1px solid #e5e3dc; border-radius:6px; font-size:12px; }
+  .empty { text-align:center; padding:24px; color:#87867F; font-size:13px; }
+  .picking { background:#22c55e !important; animation:pulse 1s infinite; }
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.7; } }
+  .footer { padding:12px 16px; border-top:1px solid #e5e3dc; font-size:11px; color:#87867F; text-align:center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>💰 Price Watch</h1>
+  <span class="count" id="target-count">0 targets</span>
+</div>
+
+<div class="section">
+  <button class="btn btn-primary" id="btn-pick">🔍 Pick Price Element</button>
+</div>
+
+<div class="section">
+  <div class="section-title">Webhook URL</div>
+  <div class="webhook-row">
+    <input type="text" id="webhook-input" placeholder="https://hooks.slack.com/...">
+    <button class="btn btn-ghost" id="btn-save-webhook" style="white-space:nowrap;">Save</button>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Monitored Targets</div>
+  <div id="targets-list">
+    <div class="empty">No targets yet. Click "Pick Price Element" on any product page.</div>
+  </div>
+</div>
+
+<div class="footer">Price Watch v0.1 · built in public</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
